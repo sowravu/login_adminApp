@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+    function validateForm() {
+            // Validate name
+            const name = document.getElementById('name').value.trim();
+            if (name.length < 4 || /\s/.test(name))
+             {
+                alert('Name must be at least 4 characters long and must not contain spaces or numbers.');
+                return false;
+            }
+            // Validate password (Optional: Add your own password validation rules if needed)
+            const password = document.getElementById('password').value.trim();
+            if (password.length < 6) {
+                alert('Password must be at least 6 characters long.');
+                return false;
+            }
+
+            return true;
+    }
+</script>
+<body>
+    <div class="form-container">
+        <h1>Login</h1>
+        <%
+        if(typeof message!=='undefined'){
+            %>
+            <h4><%=message%></h4>
+        <%}
+        %>
+        <form action="/login" method="post" onsubmit="return validateForm()">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="enter your name" required autocomplete="off">
+        </div>
+        
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="password" required>
+        </div>
+        <button type="submit" class="submit-btn">Login</button>
+    </form>
+    <p>Don't have an account? 
+        <a href="/register" class="button" style="display: inline-block; padding: 10px 25px; background-color: #123c68; color: white; text-decoration: none; border-radius: 4px; transition: background-color 0.3s;">
+            <button style="border: none; background: none; color: inherit; font: inherit; cursor: pointer; outline: inherit;">
+              Register
+            </button>
+          </a>
+          
+    
+      </p>
+    </div>
+  
+</body>
+</html>
+

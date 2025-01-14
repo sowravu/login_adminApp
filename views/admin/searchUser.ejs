@@ -1,0 +1,43 @@
+<!-- home.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-details {
+    margin-top: 20px;
+}
+
+.user-details p {
+    margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1> <%= users.name %></h1>
+        <div class="user-details">
+            <p><strong>Email:</strong> <%= users.email %></p>
+            <p><strong>Mobile:</strong> <%= users.mobile %></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="userHome.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome, <%= user.name %>!</h1>
+    </header>
+
+    <div class="container">
+        <div class="content">
+          
+            <p><strong>Name:</strong> <%= user.name %></p>
+            <p><strong>Email:</strong> <%= user.email %></p>
+            <p><strong>Mobile:</strong> <%= user.mobile %></p>
+            <a href="/logout" class="logout-button">Logout</a>
+        </div>
+    </div>
+    <footer>
+      
+    </footer>
+</body>
+</html>
